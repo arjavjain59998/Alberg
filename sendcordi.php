@@ -1,27 +1,30 @@
 <html>
-    <style>
-        body{
-            background-image: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/03/screener_1521017380872-796x419.jpg");
-            background-repeat: no-repeat;
-            background-size:cover;
-            font-size:4vh;
+<style>
+    body {
+        background-image: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/03/screener_1521017380872-796x419.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-size: 4vh;
 
 
-        }
-    </style>
+    }
+
+</style>
+
 <head>
     <title>TrackResponse</title>
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-</head>    
-<body topmargin="20%"> 
- 
+</head>
+
+<body topmargin="20%">
+
     <div style="font-family: 'Space Mono', monospace; background-color:#666666; margin: auto;
   width: 50%;
   border: 3px solid BLACK;
   padding: 10px;
   border-radius:30px">
 
-<?php
+        <?php
 $lat=$_POST["cdlat"];
 $lon=$_POST["cdlon"];
 $servername = "localhost";
@@ -33,6 +36,8 @@ $query = "SELECT id FROM users";
 $result = mysqli_query($conn, $query);
 
 if (empty($result)) {
+    $query = "CREATE DATABASE meow";
+    $query = "USE meow";
     $query = "CREATE TABLE users (
                           id int(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                           lat VARCHAR(100),
@@ -54,7 +59,8 @@ if ($conn->query($sql) === true) {
 }
 ?>
 
-</div>
+    </div>
 
 </body>
+
 </html>
