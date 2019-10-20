@@ -18,24 +18,23 @@
 
     <div class="land">
         <center>
-            <h1>Location History</h1>
+            <h1 style="color:white; font-size:4em;">Location History</h1>
         </center>
-    </div>
+    </div style="margin:1em;">
+    <centre>
+        <a href="/index.html">
+            <button href="/index.html" style="background-color:#333332; padding: 1em; text-align: center; border: none; font-size:1em; color:#f5f4ed; align-self=center; border-radius: 8px;">
+                Go to Home
+            </button>
+        </a>
+    </centre>
     <div class="timeline">
-        <div class="container left" data-aos="flip-up">
-
-            <div class="content">
-                <h2>Time:</h2>
-                <p><a id="bleh" href="" onclick="f1()">Check your Location</a></p>
-            </div>
-        </div>
-
-
+        
         <?php
 $servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "track";
+$username = "id11285787_meow";
+$password = "abcdef";
+$dbname = "id11285787_meow";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -51,7 +50,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     echo "<table cellspacing=10px cellpadding=10px><tr><th>ID</th><th>LATITUDE</th><th>LONGITUDE</th></tr>";  
     while ($row = $result->fetch_assoc()) {        
-        echo "<div class=\"container right\" data-aos=\"flip-up\"><div class=\"content\"><h2>Time:".$row["id"]."</h2><p><a id=\"bleh\" href=\"https://maps.google.com/?q=".$row["lat"].",".$row["lon"]."\" onclick=\"\">Check your Location</a></p></div></div>";
+        echo "<div class=\"container right\" data-aos=\"flip-up\"><div class=\"content\"><h2>Time: ".$row["id"]."</h2><p><a id=\"bleh\" href=\"https://maps.google.com/?q=".$row["lat"].",".$row["lon"]."\" onclick=\"\">Check your Location</a></p></div></div>";
     }
     echo "</table>";
 } else {

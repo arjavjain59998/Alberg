@@ -28,18 +28,17 @@
 $lat=$_POST["cdlat"];
 $lon=$_POST["cdlon"];
 $servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname="track";
+$username = "id11285787_meow";
+$password = "abcdef";
+$dbname="id11285787_meow";
 $conn = new mysqli($servername, $username,$password, $dbname);
 $query = "SELECT id FROM users";
 $result = mysqli_query($conn, $query);
 
 if (empty($result)) {
-    $query = "CREATE DATABASE meow";
-    $query = "USE meow";
     $query = "CREATE TABLE users (
                           id int(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                          ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                           lat VARCHAR(100),
                           lon VARCHAR(100)
                           )";
